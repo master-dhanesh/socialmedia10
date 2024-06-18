@@ -1,0 +1,13 @@
+{
+    "name": "socialmedia10",
+    "version": "1.0.0",
+    "description": "This is the social media app",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "Made in Sheryians",
+    "license": "ISC"
+}
