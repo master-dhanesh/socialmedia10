@@ -10,3 +10,4 @@ Step 9: require the database.js file in app.js
 Step 10. Create index.routes.js and user.route.js and require in app.js
 Step 11. Create Partials in views and use tailwind cdn
 Step 12. create pages according to nav links in index.routes.js
+Step 13. create login register and forget ejs page.
