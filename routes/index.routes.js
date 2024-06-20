@@ -17,4 +17,11 @@ router.get("/login", (req, res) => {
     res.render("login", { title: "Login | SocialMedia" });
 });
 
+router.get("/register", (req, res) => {
+    res.render("register", { title: "Register | SocialMedia" });
+});
+
+router.get("/forgot", (req, res) => {
+    res.render("forgot", { title: "Forgot Password  | SocialMedia" });
+});
 module.exports = router;

@@ -1,0 +1,17 @@
+<%- include('partials/header')%>
+  <!--  -->
+  <%- include('partials/nav')%>
+    <!--  -->
+    <div class="w-[80%] mx-auto p-10 ">
+      <form class="text-2xl m-auto w-1/2" action="/user/register" method="post">
+        <h1 class=" mb-10  text-5xl font-bold">Register User</h1>
+        <input class="w-full mb-5 border p-3 rounded" type="email" placeholder="example@email.com" name="email">
+        <input class="w-full mb-5 border p-3 rounded" type="text" placeholder="username" name="username">
+        <input class=" mb-5  w-full border p-3 rounded" type="password" placeholder="********" name="password">
+
+        <button class="mb-5 hover:bg-red-400 w-1/2 bg-red-300 px-5 py-2 text-white rounded" ">Register User</button>
+      <p>Already have an account ? <a class=" text-blue-400" href=" /login">Login</a></p>
+      </form>
+    </div>
+    <!--  -->
+    <%- include('partials/footer')%>
