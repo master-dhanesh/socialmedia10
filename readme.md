@@ -12,3 +12,8 @@ Step 11. Create Partials in views and use tailwind cdn
 Step 12. create pages according to nav links in index.routes.js
 Step 13. create login register and forget ejs page.
 Step 14. Create profile.ejs page as well
+Step 15: install npm i --save passport passport-local passport-local-mongoose express-session
+Step 16: Configure Passport Boilerplate
+i. changes in user.schema.js
+ii. changes in app.js
+iii. changes in user.routes.js
