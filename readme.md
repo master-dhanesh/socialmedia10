@@ -17,3 +17,7 @@ Step 16: Configure Passport Boilerplate
 i. changes in user.schema.js
 ii. changes in app.js
 iii. changes in user.routes.js
+Step 16: Register User in the database
+Step 17: Make Login router with middleware
+Step 18: Middleware isLoggedIn in middleware/auth.js for page authentication
+Step 19: Logout Functionality
