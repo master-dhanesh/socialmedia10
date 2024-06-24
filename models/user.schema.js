@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema(
             type: String,
             default: "https://www.gravatar.com/avatar/",
         },
+        otp: {
+            type: Number,
+            default: 0,
+        },
     },
     { timestamps: true }
 );

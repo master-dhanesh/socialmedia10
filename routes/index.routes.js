@@ -21,10 +21,19 @@ router.get("/register", (req, res) => {
     res.render("register", { title: "Register | SocialMedia", user: req.user });
 });
 
-router.get("/forgot", (req, res) => {
-    res.render("forgot", {
+router.get("/forget-email", (req, res) => {
+    res.render("forgetemail", {
         title: "Forgot Password  | SocialMedia",
         user: req.user,
     });
 });
+
+router.get("/verify-otp/:id", (req, res) => {
+    res.render("forgetOTP", {
+        title: "Verify OTP  | SocialMedia",
+        user: req.user,
+        id: req.params.id,
+    });
+});
+
 module.exports = router;
