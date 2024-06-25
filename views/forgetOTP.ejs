@@ -3,9 +3,12 @@
   <%- include('partials/nav')%>
     <!--  -->
     <div class="w-[80%] mx-auto p-10 ">
-      <form class="text-2xl m-auto w-1/2" action="/user/verify-otp" method="post">
+      <form class="text-2xl m-auto w-1/2" action="/user/verify-otp/<%= id%>" method="post">
         <h1 class=" mb-10  text-5xl font-bold">Verify OTP</h1>
+
         <input class="w-full mb-5 border p-3 rounded" type="number" placeholder="Enter OTP" name="otp">
+
+        <input class="w-full mb-5 border p-3 rounded" type="password" placeholder="Enter New Password" name="password">
 
         <button class="mb-5 hover:bg-red-400 w-1/2 bg-red-300 px-5 py-2 text-white rounded" ">Verify</button>
       </form>

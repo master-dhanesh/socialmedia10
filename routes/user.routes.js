@@ -56,4 +56,27 @@ router.post("/send-mail", async (req, res, next) => {
     }
 });
 
+router.post("/verify-otp/:id", async (req, res, next) => {
+    try {
+        const user = await UserCollection.findById(req.params.id);
+        if (!user) return res.send("No user found.");
+
+        if (user.otp != req.body.otp) {
+            user.otp = 0;
+            await user.save();
+            return res.send(
+                "Invalid OTP. <a href='/forget-email'>Try Again</a>"
+            );
+        }
+
+        user.otp = 0;
+        await user.setPassword(req.body.password);
+        await user.save();
+        res.redirect("/login");
+    } catch (error) {
+        console.log(error);
+        res.send(error.message);
+    }
+});
+
 module.exports = router;
