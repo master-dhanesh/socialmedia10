@@ -5,6 +5,9 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+// file uploader
+const fileUpload = require("express-fileupload");
+
 // db connection
 const db = require("./models/database");
 db.connect();
@@ -26,6 +29,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+app.use(
+    fileUpload({
+        limits: { fileSize: 50 * 1024 * 1024 },
+    })
+);
 
 app.use(
     session({

@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema(
         email: String,
         avatar: {
             type: String,
-            default: "https://www.gravatar.com/avatar/",
+            default:
+                "https://ik.imagekit.io/nea65x1oy/default-image.png?updatedAt=1719377803574",
         },
         otp: {
             type: Number,

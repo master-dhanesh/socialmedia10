@@ -1,11 +1,13 @@
 var express = require("express");
 var router = express.Router();
+const path = require("path");
 
 const passport = require("passport");
 const LocalStategy = require("passport-local");
 const UserCollection = require("../models/user.schema");
 const { isLoggedIn } = require("../middleware/auth");
 const { sendMail } = require("../utils/sendmail");
+const imagekit = require("../utils/imagekit");
 
 passport.use(new LocalStategy(UserCollection.authenticate()));
 
@@ -73,6 +75,25 @@ router.post("/verify-otp/:id", async (req, res, next) => {
         await user.setPassword(req.body.password);
         await user.save();
         res.redirect("/login");
+    } catch (error) {
+        console.log(error);
+        res.send(error.message);
+    }
+});
+
+router.get("/settings", isLoggedIn, (req, res, next) => {
+    res.render("settings", { title: "Settings | Socialmedia", user: req.user });
+});
+
+router.post("/avatar/:id", isLoggedIn, async (req, res, next) => {
+    try {
+        const result = await imagekit.upload({
+            file: req.files.avatar.data,
+            fileName: Date.now() + path.extname(req.files.avatar.name),
+        });
+        console.log(result);
+
+        res.redirect("/user/settings");
     } catch (error) {
         console.log(error);
         res.send(error.message);

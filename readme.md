@@ -12,6 +12,9 @@ Step 11. Create Partials in views and use tailwind cdn
 Step 12. create pages according to nav links in index.routes.js
 Step 13. create login register and forget ejs page.
 Step 14. Create profile.ejs page as well
+
+<!-- PASSPORT JS AUTHENTICATION  -->
+
 Step 15: install npm i --save passport passport-local passport-local-mongoose express-session
 Step 16: Configure Passport Boilerplate
 i. changes in user.schema.js
@@ -21,3 +24,18 @@ Step 16: Register User in the database
 Step 17: Make Login router with middleware
 Step 18: Middleware isLoggedIn in middleware/auth.js for page authentication
 Step 19: Logout Functionality
+
+<!-- FOREGT PASSWORD FUNCTIONALITY -->
+
+Step 20: Create "OTP" field in user.schema.js and Create forgetemail.ejs -> /forget-email GET
+Step 21: create /user/send-mail/:id POST and call sendmail function
+Step 22: To send mail install nodemailer and create utils/sendmail.js file and create boilerplate -> redirect to /verify-otp/:id GET
+Step 23: Create forgetOTP.ejs and take the otp and compare with db in user/verify-otp/:id POST and redirect to /login
+
+<!-- INTEGRATING CONTENT DELIVERY SYSTEM -->
+
+STEP 25: Create setting.ejs and /user/setting GET to Update user details and avatar
+STEP 26: Create form to upload image in /user/avatar/:id POST
+STEP 24: install imagekit and utils/imagekit.js create boilerplate, define all the keys and endpoint-url and export
+STEP 25: install express-fileupload and in app.js initialize express-fileupload
+STEP 26: in /user/avatar/:id write code to upload image and redirect to /user/settings GET

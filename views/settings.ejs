@@ -1,0 +1,57 @@
+<%- include('partials/header')%>
+  <!--  -->
+  <%- include('partials/nav')%>
+    <!--  -->
+    <div class="w-[80%] mx-auto p-10 ">
+      <div class="flex w-full p-10">
+        <div>
+          <img class="avatarimage rounded-full w-[10vmax] h-[10-vmax] object-cover" src="<%= user.avatar%>" alt="">
+
+          <form method="post" class="avatarform hidden" action="/user/avatar/<%= user._id%>"
+            enctype="multipart/form-data">
+            <input class="avatarinput" type="file" name="avatar">
+          </form>
+
+        </div>
+
+        <div class="ml-10">
+          <h1 class="text-5xl font-extrabold">
+            <%= user.username%>
+          </h1>
+          <p class="mt-3">
+            <%= user.email%>
+          </p>
+        </div>
+
+      </div>
+
+
+      <form class="text-2xl m-auto " action="/user/register" method="post">
+        <h1 class=" mb-10  text-5xl font-bold">User Profile Details</h1>
+        <input class="w-full mb-5 border p-3 rounded" type="email" placeholder="example@email.com" name="email"
+          value="<%= user.email%>">
+        <input class="w-full mb-5 border p-3 rounded" type="text" placeholder="username" name="username"
+          value="<%= user.username%>">
+
+        <button class="mb-5 hover:bg-red-400 w-1/2 bg-red-300 px-5 py-2 text-white rounded" ">Update User Profile</button>
+      
+      </form>
+    </div>
+    
+    <!--  -->
+    <script>
+      const avatarimage = document.querySelector('.avatarimage');
+      const avatarinput = document.querySelector('.avatarinput');
+      const avatarform = document.querySelector('.avatarform');
+
+      avatarimage.addEventListener('click', () => {
+        avatarinput.click();
+      });
+
+      avatarinput.addEventListener('change', () => {
+        avatarform.submit();
+      });
+
+    </script>
+
+    <%- include('partials/footer')%>
