@@ -7,9 +7,9 @@ const userSchema = new mongoose.Schema(
         password: String,
         email: String,
         avatar: {
-            type: String,
-            default:
-                "https://ik.imagekit.io/nea65x1oy/default-image.png?updatedAt=1719377803574",
+            fileId: String,
+            url: String,
+            thumbnailUrl: String,
         },
         otp: {
             type: Number,
