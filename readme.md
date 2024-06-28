@@ -43,3 +43,7 @@ STEP 27: in /user/avatar/:id we will write the code to save image in database
 STEP 28: In Schema change that avatar to {fieldID: String, url: String,thumbnailUrl:String}
 
 STEP 29 create GET /user/delete/:id to delete to delete user and image from the imagekit as well
+
+STEP 30: created /user/update/:id POST to update user details
+STEP 31: created reset.ejs page and /user/reset-password/:id GET to show reset.ejs page
+STEP 32: create /user/reset-password/:id POST to reset password

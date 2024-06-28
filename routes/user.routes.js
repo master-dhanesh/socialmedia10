@@ -115,4 +115,35 @@ router.get("/delete/:id", isLoggedIn, async (req, res, next) => {
     }
 });
 
+router.post("/update/:id", isLoggedIn, async (req, res, next) => {
+    try {
+        await UserCollection.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect("/user/settings");
+    } catch (error) {
+        console.log(error);
+        res.send(error.message);
+    }
+});
+
+router.get("/reset-password/:id", isLoggedIn, (req, res, next) => {
+    res.render("reset", {
+        title: "Reset Password | Socialmedia",
+        user: req.user,
+    });
+});
+
+router.post("/reset-password/:id", isLoggedIn, async (req, res, next) => {
+    try {
+        await req.user.changePassword(
+            req.body.oldpassword,
+            req.body.newpassword
+        );
+        await req.user.save();
+        res.redirect("/user/settings");
+    } catch (error) {
+        console.log(error);
+        res.send(error.message);
+    }
+});
+
 module.exports = router;

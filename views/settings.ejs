@@ -29,7 +29,7 @@
         </div>
 
 
-        <form class="text-2xl m-auto " action="/user/register" method="post">
+        <form class="text-2xl m-auto " action="/user/update/<%= user._id%>" method="post">
           <h1 class=" mb-10  text-5xl font-bold">User Profile Details</h1>
           <input class="w-full mb-5 border p-3 rounded" type="email" placeholder="example@email.com" name="email"
             value="<%= user.email%>">
