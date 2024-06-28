@@ -39,3 +39,7 @@ STEP 26: Create form to upload image in /user/avatar/:id POST
 STEP 24: install imagekit and utils/imagekit.js create boilerplate, define all the keys and endpoint-url and export
 STEP 25: install express-fileupload and in app.js initialize express-fileupload
 STEP 26: in /user/avatar/:id write code to upload image and redirect to /user/settings GET
+STEP 27: in /user/avatar/:id we will write the code to save image in database
+STEP 28: In Schema change that avatar to {fieldID: String, url: String,thumbnailUrl:String}
+
+STEP 29 create GET /user/delete/:id to delete to delete user and image from the imagekit as well
