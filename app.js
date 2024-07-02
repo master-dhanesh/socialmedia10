@@ -11,6 +11,7 @@ const fileUpload = require("express-fileupload");
 // db connection
 const db = require("./models/database");
 db.connect();
+var postRoutes = require("./routes/post.routes");
 var userRoutes = require("./routes/user.routes");
 var indexRoutes = require("./routes/index.routes");
 
@@ -50,6 +51,7 @@ passport.deserializeUser(UserCollection.deserializeUser());
 
 app.use("/", indexRoutes);
 app.use("/user", userRoutes);
+app.use("/post", postRoutes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
