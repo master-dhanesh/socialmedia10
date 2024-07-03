@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
     try {
-        const posts = await PostCollection.find();
+        const posts = await PostCollection.find().populate("user");
 
         res.render("index", {
             title: "Homepage | SocialMedia",

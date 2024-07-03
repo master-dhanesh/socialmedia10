@@ -2,10 +2,21 @@
   <!--  -->
   <%- include('partials/nav')%>
     <!--  -->
-    <div class="w-[80%] mx-auto p-10 bg-zinc-700 rounded">
-      <h1 class=" mb-10 text-white text-5xl font-bold">hello <%= user.username%> 👋</h1>
-      <img src="<%= user.avatar%>" alt="">
-      <a class="bg-red-300 px-5 py-2 text-white rounded" href="/user/logout">Logout</a>
+
+    <div class="w-[80%] mx-auto p-10">
+
+      <div class="w-full bg-zinc-700 rounded">
+        <h1 class=" mb-10 text-white text-5xl font-bold">hello <%= user.username%> 👋</h1>
+        <img src="<%= user.avatar%>" alt="">
+        <a class="bg-red-300 px-5 py-2 text-white rounded" href="/user/logout">Logout</a>
+      </div>
+      <hr>
+      <div class="w-full mt-10">
+        <h1 class="text-2xl">Posts</h1>
+        <%= JSON.stringify(posts)%>
+      </div>
     </div>
+
+
     <!--  -->
     <%- include('partials/footer')%>

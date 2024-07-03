@@ -1,0 +1,16 @@
+<%- include('partials/header')%>
+  <!--  -->
+  <%- include('partials/nav')%>
+    <!--  -->
+    <div class="w-[80%] mx-auto p-10 ">
+      <form class="text-2xl m-auto w-1/2" action="/post/create" method="post" enctype="multipart/form-data">
+        <h1 class=" mb-10  text-5xl font-bold">Create Post</h1>
+        <input class="w-full mb-5 border p-3 rounded" type="text" placeholder="Title" name="title">
+        <input class=" mb-5  w-full border p-3 rounded" type="file" name="media">
+
+        <button class="mb-5 hover:bg-red-400 w-1/2 bg-red-300 px-5 py-2 text-white rounded" ">Create Post</button>
+     
+      </form>
+    </div>
+    <!--  -->
+    <%- include('partials/footer')%>
