@@ -35,4 +35,22 @@ router.post("/create", isLoggedIn, async function (req, res, next) {
     }
 });
 
+router.get("/like/:pid", isLoggedIn, async function (req, res, next) {
+    try {
+        const post = await PostCollection.findById(req.params.pid);
+        if (post.likes.includes(req.user._id)) {
+            const uidx = post.likes.indexOf(req.user._id);
+            post.likes.splice(uidx, 1);
+        } else {
+            post.likes.push(req.user._id);
+        }
+
+        await post.save();
+        res.redirect("/user/profile");
+    } catch (error) {
+        console.log(error);
+        res.send(error.message);
+    }
+});
+
 module.exports = router;
